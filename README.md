@@ -1,51 +1,32 @@
 # Screen Recorder
-This is a Python-based screen recorder that captures audio from the system, audio from the microphone, and screen video. The recordings are merged into a single file and uploaded to an AWS S3 bucket for storage.
+
+This Python project captures the screen and system audio, allowing users to record their screen with synchronized audio. It saves the recording as an MP4 file and automatically uploads it to an AWS S3 bucket.
 
 # Features
-Screen Recording: Captures screen activity as video frames.
 
-Microphone Audio Recording: Records audio input from the microphone.
+Records screen at approximately 20 FPS.
 
-System Audio Recording: Records audio output from the system (e.g., sound from speakers).
+Captures system audio using a loopback device.
 
-Audio-Video Merging: Combines screen video, microphone audio, and system audio into a single file using FFmpeg.
+Saves recordings to the desktop in a ScreenRecordings folder.
 
-AWS S3 Upload: Uploads the final recording to an Amazon S3 bucket for secure storage.
+Automatically uploads recordings to an AWS S3 bucket.
 
-User-Friendly GUI: Provides a simple interface to start and stop recordings.
+Start/stop recording with the F9 key.
 
 # Requirements
-Software
-Python 3
 
-FFmpeg (Required for merging audio and video)
+Before running the script, install the required dependencies:
 
-Python Libraries
-Install the required libraries using pip:
+pip install numpy pynput mss sounddevice moviepy boto3
 
-pip install sounddevice soundfile numpy pyautogui opencv-python boto3 soundcard ttkbootstrap getmac
+# Setup
 
-# How It Works
- ## Start Recording:
+Ensure your system has an audio loopback device for capturing system sound.
 
-Click the Start Recording button in the GUI.
+Modify self.audio_device_index in the script to match your system's loopback device.
 
-The application will begin capturing:
+Set up AWS credentials for S3 uploads.
 
-Screen activity (as video frames).
+Run the script.
 
-Microphone audio.
-
-System audio.
-
-## Stop Recording:
-
-Click the Stop Recording button.
-
-The application will:
-
-Stop all recordings.
-
-Merge the video and audio files using FFmpeg.
-
-Upload the final recording to the specified AWS S3 bucket.
