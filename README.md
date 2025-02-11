@@ -22,4 +22,30 @@ FFmpeg (Required for merging audio and video)
 
 Python Libraries
 Install the required libraries using pip:
+
 pip install sounddevice soundfile numpy pyautogui opencv-python boto3 soundcard ttkbootstrap getmac
+
+# How It Works
+ ## Start Recording:
+
+Click the Start Recording button in the GUI.
+
+The application will begin capturing:
+
+Screen activity (as video frames).
+
+Microphone audio.
+
+System audio.
+
+## Stop Recording:
+
+Click the Stop Recording button.
+
+The application will:
+
+Stop all recordings.
+
+Merge the video and audio files using FFmpeg.
+
+Upload the final recording to the specified AWS S3 bucket.
