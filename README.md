@@ -16,7 +16,7 @@ User-Friendly GUI: Provides a simple interface to start and stop recordings.
 
 # Requirements
 Software
-Python 3.x (Tested on Python 3.8+)
+Python 3
 
 FFmpeg (Required for merging audio and video)
 
